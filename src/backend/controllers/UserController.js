@@ -62,7 +62,7 @@ const login = async (req, res) => {
 
   // Checar se as senhas são iguais
   if (!(await bcrypt.compare(password, user.password))) {
-    res.status(422).json({ error: ["Senha inválida."] });
+    res.status(422).json({ errors: ["Senha inválida."] });
     return;
   }
 
