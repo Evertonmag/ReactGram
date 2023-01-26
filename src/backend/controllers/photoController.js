@@ -144,21 +144,29 @@ const likePhoto = async (req, res) => {
 
   // Checar se o usuario ja deu like (se sim tirar o like)
   let message = "";
+  let IsLiked = false;
 
   if (photo.likes.includes(reqUser._id)) {
     // tirar o like do array de likes
     photo.likes.pop(reqUser._id);
     message = "A foto foi descurtida";
+    IsLiked = false;
   } else {
     // Colocar o like no array de likes
     photo.likes.push(reqUser._id);
     message = "A foto foi curtida";
+    IsLiked = true;
   }
 
   // Salvar as alterações
   photo.save();
 
-  res.status(200).json({ photoId: id, userId: reqUser._id, message: message });
+  res.status(200).json({
+    photoId: id,
+    userId: reqUser._id,
+    message: message,
+    IsLiked: IsLiked,
+  });
 };
 
 // Funcionalidade de Comentário

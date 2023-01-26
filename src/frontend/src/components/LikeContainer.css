@@ -1,0 +1,31 @@
+.like {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #363636;
+  border-bottom: 1px solid #363636;
+}
+
+#home .like {
+  border: none;
+}
+
+#profile .like {
+  border: none;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+
+#profile .like p {
+  margin-left: 0;
+  margin-top: 0.5em;
+}
+
+.like svg {
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.like p {
+  margin-left: 1em;
+}

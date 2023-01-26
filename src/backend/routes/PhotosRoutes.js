@@ -37,7 +37,7 @@ router.post(
 // Rota para deletar uma imagem
 router.delete("/:id", authGuard, deletePhoto);
 //Rota para buscar todas as imagens
-router.get("/", authGuard, getAllPhotos);
+router.get("/", getAllPhotos);
 //Rota para buscar todas as imagens de um usuário
 router.get("/user/:id", authGuard, getUserPhotos);
 //Rota para pesquisar imagens pelo titulo
